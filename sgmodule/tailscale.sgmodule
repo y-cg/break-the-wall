@@ -1,0 +1,13 @@
+#!name=Tailscale Bridge
+#!desc=Configure Surge to work perfectly with Tailscale
+#!system=mac
+
+[Proxy]
+Tailscale = DIRECT, interface = utun5
+
+[Rule]
+# Tailscale
+IP-CIDR,100.64.0.0/10,Tailscale,no-resolve
+
+[Host]
+*.ts.net = server:100.100.100.100
