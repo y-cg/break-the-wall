@@ -7,7 +7,7 @@ Tailscale = DIRECT, interface = utun5
 
 [Rule]
 # Tailscale
-IP-CIDR,100.64.0.0/10,Tailscale,no-resolve
+IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
 
 [Host]
 *.ts.net = server:100.100.100.100
