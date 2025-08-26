@@ -1,9 +1,10 @@
 #!name=Tailscale Bridge
 #!desc=Configure Surge to work perfectly with Tailscale
+#!arguments=interface:utun5
 #!system=mac
 
 [Proxy]
-Tailscale = DIRECT, interface = utun5
+Tailscale = DIRECT, interface = {{{interface}}}
 
 [Rule]
 # Tailscale
