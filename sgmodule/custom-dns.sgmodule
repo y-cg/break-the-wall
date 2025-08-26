@@ -1,0 +1,14 @@
+#!name=Selfhost DNS Server
+#!desc=Improve selfhost DNS server compatibility
+#!arguments=server
+#!system=mac
+
+[General]
+# always return real ip for *.local, *.lan, *.internal (on all ports)
+# See https://manual.nssurge.com/others/host-list.html
+always-real-ip = %APPEND% *.local:0, *.lan:0, *.internal:0
+
+[Host]
+*.local = server:{{{server}}}
+*.lan = server:{{{server}}}
+*.internal = server:{{{server}}}
