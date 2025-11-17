@@ -3,12 +3,20 @@
 #!arguments=interface:utun5
 #!system=mac
 
+[General]
+# derp server: derp{n}.tailscale.net
+always-real-ip = %APPEND% *.tailscale.com
+
+[MITM]
+hostname = -*.tailscale.com
+
 [Proxy]
 Tailscale = DIRECT, interface = {{{interface}}}
 
 [Rule]
 # Tailscale
 IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+DOMAIN-SUFFIX,tailscale.com,DIRECT,no-resolve
 
 [Host]
 *.ts.net = server:100.100.100.100
