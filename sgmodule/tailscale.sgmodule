@@ -4,8 +4,9 @@
 #!system=mac
 
 [General]
-# derp server: derp{n}.tailscale.net
-always-real-ip = %APPEND% *.tailscale.com
+# derp server: derp{n}.tailscale.com
+# see https://login.tailscale.com/derpmap/default
+always-real-ip = %APPEND% *.tailscale.com, *.ts.net
 
 [MITM]
 hostname = -*.tailscale.com
